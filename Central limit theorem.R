@@ -24,6 +24,17 @@ ans=NULL
  for(i in 1:7000){
    ans[i]=clt_fun()
  }  
+ 
+ library(boot)
+
+meanFun<-function(x,i){
+  mean(x[i])
+  
+}
+
+ bootMean <- boot(income,meanFun,1000)
+ bootMean
+ 
   qplot(ans,xlab="Income",ylab="Frequency",main="Frequency distribution of Income")
   
   
@@ -32,4 +43,5 @@ ans=NULL
   
   plot(density(income))
   lines(density(ans),col=3)
+  lines(density(bootMean$t),col=2)
    
