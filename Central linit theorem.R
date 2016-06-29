@@ -1,7 +1,11 @@
 hist(bdata$income)
 library(ggplot2)
 attach(bdata)
-ggplot(bdata,aes(x=income))+geom_histogram(aes(fill=gender))#qplot provide better graphics
+ggplot(bdata,aes(x=income))+geom_histogram(aes(fill=gender))
+
+#The central limit theorem (CLT) is a statistical theory that states that given a sufficiently large sample size from a population with a finite level of variance, 
+#the mean of all samples from the same population will be approximately equal to the mean of the population.
+
 
 clt_fun=function(){
   
